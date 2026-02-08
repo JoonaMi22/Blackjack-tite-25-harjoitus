@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-public abstract class Deck
+public class Deck
 {
     private List<Card> cards = new List<Card>();
     private Random random = new Random();

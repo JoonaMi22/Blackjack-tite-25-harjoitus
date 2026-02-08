@@ -1,6 +1,6 @@
 ﻿using System;
 
-public static class Blackjack
+public class Blackjack
 {
     private Deck deck = new Deck();
     private Player player = new Player();
