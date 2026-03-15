@@ -5,14 +5,23 @@ public class Player
 {
 	public List<Card> Hand { get; } = new List<Card>();
 
-	public void TakeCard (Card card)
+
+	public int Score
+	{
+		get
+		{
+			return Hand.Sum(card => card.Value);
+		}
+	}
+	public void TakeCard(Card card)
 
 	{
 		Hand.Add(card);
 	}
 
-	public int Score
+	public virtual void PlayTurn(Deck deck)
 	{
-		get { return Hand.Sum(card => card.Value); }
+		Console.WriteLine("Pelaajan vuoro");
+
 	}
 }

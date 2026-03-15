@@ -1,22 +1,25 @@
 ﻿using System.IO;
 
-public class SaveManager
+public class SaveManager : ISaveable
 {
-	private string filePath = "Viimeisin käsi.txt";
+	private string filePath = "Last score.txt";
+	public int LastScore;
 
-	public void SaveScore(int score)
+	public void Save()
 	{
-		File.WriteAllText(filePath, score.ToString());
+		File.WriteAllText(filePath, LastScore.ToString());
 	}
 
-	public int LoadScore()
+	public void Load()
 	{
 		if (File.Exists(filePath))
 		{
 			string text = File.ReadAllText(filePath);
-			return int.Parse(text);
-		}
 
-		return 0;
+			if (int.TryParse(text, out int score))
+			{
+				LastScore = score;
+			}
+		}
 	}
 }

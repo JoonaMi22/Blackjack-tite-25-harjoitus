@@ -27,16 +27,14 @@
       <HashCode>AAAAAAAAACAAAAgAAAAAAAAAAAAAAAAAAAgAAAAAAAA=</HashCode>
       <FileName>Player.cs</FileName>
     </TypeIdentifier>
-    <ShowAsCollectionAssociation>
-      <Property Name="Hand" />
-    </ShowAsCollectionAssociation>
   </Class>
   <Class Name="SaveManager">
     <Position X="9" Y="0.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAIAAAAAAAAAAAAAAAAAAAAAEACAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAggIAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAA=</HashCode>
       <FileName>SaveManager.cs</FileName>
     </TypeIdentifier>
+    <Lollipop Position="0.2" />
   </Class>
   <Font Name="Segoe UI" Size="9" />
 </ClassDiagram>

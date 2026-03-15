@@ -4,18 +4,18 @@ public class Blackjack
 {
     private Deck deck = new Deck();
     private Player player = new Player();
-    private Player dealer = new Player();
+    private Player dealer = new Dealer();
     private SaveManager saveManager = new SaveManager();
 
 
     public void Start()
     {
         Console.WriteLine("BLACKJACK");
-        int lastScore = saveManager.LoadScore();
-        Console.WriteLine("Viime pelin käsi: " + lastScore);
+		saveManager.Load();
+		Console.WriteLine("Viimeisin käsi: " + saveManager.LastScore);
 
 
-        player.TakeCard(deck.DrawCard());
+		player.TakeCard(deck.DrawCard());
         player.TakeCard(deck.DrawCard());
 
         dealer.TakeCard(deck.DrawCard());
@@ -35,10 +35,10 @@ public class Blackjack
     {
         while (true)
         {
-            Console.WriteLine($"Piste määräsi: {player.Score}");
+            Console.WriteLine("Piste määräsi: " + player.Score);
             Console.WriteLine("Nosta vai jätä? (n/j)");
 
-            string input = Console.ReadLine()?.ToLower();
+            string? input = Console.ReadLine()?.ToLower();
 
             if (input == "n")
             {
@@ -61,12 +61,9 @@ public class Blackjack
     {
         Console.WriteLine("\nJakajan vuoro.");
 
-        while (dealer.Score < 17)
-        {
-            dealer.TakeCard(deck.DrawCard());
-        }
+		dealer.PlayTurn(deck);
 
-        Console.WriteLine($"Jakajan pistemäärä: {dealer.Score}");
+		Console.WriteLine($"Jakajan pistemäärä: {dealer.Score}");
     }
 
     private void CheckWinner()
@@ -80,7 +77,8 @@ public class Blackjack
             Console.WriteLine("Jakaja voittaa");
         else
             Console.WriteLine("Tasapeli");
-        saveManager.SaveScore(player.Score);
+		saveManager.LastScore = player.Score;
+		saveManager.Save();
 
-    }
+	}
 }
