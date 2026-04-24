@@ -2,17 +2,22 @@
 
 public class Blackjack
 {
+    //luokasta oliot
     private Deck deck = new Deck();
     private Player player = new Player();
-    private Player dealer = new Dealer();
+    private Player dealer = new Dealer(); //polymorphismi
     private SaveManager saveManager = new SaveManager();
 
 
     public void Start()
-    {
-        Console.WriteLine("BLACKJACK");
+	// alustus
+	// pelaajan vuoro
+	// jakajan vuoro  
+	// voittajan tarkistus
+	{
+		Console.WriteLine("BLACKJACK");
 		saveManager.Load();
-		Console.WriteLine("Viimeisin käsi: " + saveManager.LastScore);
+		Console.WriteLine("Viimeisin käsi: " + saveManager.LastScore); //property kenttä
 
 
 		player.TakeCard(deck.DrawCard());

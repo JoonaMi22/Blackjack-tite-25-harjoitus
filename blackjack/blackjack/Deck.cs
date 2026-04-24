@@ -4,7 +4,7 @@ using System.Linq;
 
 public class Deck
 {
-    private List<Card> cards = new List<Card>();
+    private List<Card> cards = new List<Card>(); //oliokokoelma
     private Random random = new Random();
 
     public Deck()

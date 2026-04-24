@@ -1,6 +1,6 @@
-﻿public class Dealer : Player
+﻿public class Dealer : Player //perii metodit player luokasta
 {
-	public override void PlayTurn(Deck deck)
+	public override void PlayTurn(Deck deck) //ylikirjoittaa metodin
 	{
 		Console.WriteLine("Jakajan vuoro");
 

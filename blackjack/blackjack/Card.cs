@@ -1,9 +1,9 @@
 ﻿public class Card
 {
-    public string Suit { get; set; }
+    public string Suit { get; set; } //property
     public string Rank { get; set; }
 
-    public Card(string suit, string rank)
+    public Card(string suit, string rank) //konstruktori
     {
         Suit = suit;
         Rank = rank;
